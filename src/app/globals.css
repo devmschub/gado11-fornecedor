@@ -3,13 +3,11 @@
 @theme {
   --font-sans: var(--font-manrope);
 
-  --color-primary: #13ec5b;
-  --color-primary-hover: #0fd451;
-  --color-background-light: #f6f8f6;
-  --color-background-dark: #0c120e;
-  --color-surface-dark: #16201a;
-  --color-surface-darker: #101813;
-  --color-border-dark: #233328;
+  --color-primary: #0df20d;
+  --color-background-light: #f5f8f5;
+  --color-background-dark: #102210;
+  --color-surface-dark: #162b16;
+  --color-border-dark: #1e3a1e;
 
   --animate-fade-in: fade-in 0.5s ease-out forwards;
   --animate-slide-up: slide-up 0.5s ease-out forwards;
@@ -17,7 +15,9 @@
 
 @layer utilities {
   .glass-effect {
-    @apply bg-[#102210]/80 backdrop-blur-xl border border-[#0df20d]/10;
+    background: rgba(16, 34, 16, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(13, 242, 13, 0.1);
   }
 
   .grid-pattern {
@@ -41,7 +41,7 @@
     border-radius: 4px;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #13ec5b;
+    background: #0df20d;
   }
 
   .step-connector::after {
@@ -56,7 +56,7 @@
     transform: translateY(-50%);
   }
   .step-connector.active::after {
-    background-color: #13ec5b;
+    background-color: #0df20d;
   }
   .step-connector:last-child::after {
     display: none;

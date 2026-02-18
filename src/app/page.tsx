@@ -1,27 +1,25 @@
 'use client';
 
-import { useState } from 'react';
 import {
   TrendingUp,
-  Gauge, // Speed equivalent
-  ShieldCheck, // Verified User equivalent
+  Gauge,
+  ShieldCheck,
   Building2,
   Lock,
   Eye,
   EyeOff,
   ArrowRight,
-  Globe, // Public equivalent
-  CheckCircle, // Verified equivalent
+  Globe,
   BadgeCheck,
 } from 'lucide-react';
 import Image from 'next/image';
-import { Input } from '@/components/ui/Input';
+import { useState } from 'react';
 
 export default function Home() {
-  const [remember, setRemember] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center font-sans overflow-hidden relative text-slate-100 bg-background-dark">
+    <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex items-center justify-center font-sans overflow-hidden relative">
       {/* Background Decor */}
       <div className="absolute inset-0 grid-pattern pointer-events-none"></div>
       <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full"></div>
@@ -124,13 +122,18 @@ export default function Home() {
                 >
                   CNPJ da Empresa
                 </label>
-                <Input
-                  id="cnpj"
-                  icon={Building2}
-                  placeholder="00.000.000/0000-00"
-                  mask="cnpj"
-                  className="bg-surface-dark/50 border-border-dark placeholder-slate-600 focus:ring-primary/40 focus:border-primary"
-                />
+                <div className="relative group">
+                  <Building2
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors"
+                    size={24}
+                  />
+                  <input
+                    className="w-full bg-surface-dark/50 border border-border-dark rounded-lg py-3.5 pl-12 pr-4 text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
+                    id="cnpj"
+                    placeholder="00.000.000/0000-00"
+                    type="text"
+                  />
+                </div>
               </div>
 
               <div className="space-y-2">
@@ -148,14 +151,25 @@ export default function Home() {
                     Esqueci minha senha
                   </a>
                 </div>
-                {/* Input component handles password toggle internally as per recent update */}
-                <Input
-                  id="password"
-                  type="password"
-                  icon={Lock}
-                  placeholder="••••••••"
-                  className="bg-surface-dark/50 border-border-dark placeholder-slate-600 focus:ring-primary/40 focus:border-primary"
-                />
+                <div className="relative group">
+                  <Lock
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-primary transition-colors"
+                    size={24}
+                  />
+                  <input
+                    className="w-full bg-surface-dark/50 border border-border-dark rounded-lg py-3.5 pl-12 pr-12 text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
+                    id="password"
+                    placeholder="••••••••"
+                    type={showPassword ? 'text' : 'password'}
+                  />
+                  <button
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <EyeOff size={24} /> : <Eye size={24} />}
+                  </button>
+                </div>
               </div>
 
               <div className="flex items-center space-x-2 py-2">
@@ -163,8 +177,6 @@ export default function Home() {
                   className="w-4 h-4 rounded border-border-dark bg-surface-dark text-primary focus:ring-primary focus:ring-offset-background-dark appearance-none checked:bg-primary checked:border-transparent transition-colors cursor-pointer relative"
                   id="remember"
                   type="checkbox"
-                  checked={remember}
-                  onChange={(e) => setRemember(e.target.checked)}
                 />
                 <label
                   className="text-sm text-slate-400 cursor-pointer select-none"
@@ -185,7 +197,10 @@ export default function Home() {
                 <p className="text-sm text-slate-400">
                   Ainda não é um fornecedor parceiro?
                 </p>
-                <button className="w-full border border-primary/40 text-primary hover:bg-primary/10 font-semibold py-3 rounded-lg transition-all cursor-pointer">
+                <button
+                  className="w-full border border-primary/40 text-primary hover:bg-primary/10 font-semibold py-3 rounded-lg transition-all cursor-pointer"
+                  onClick={() => (window.location.href = '/onboarding')}
+                >
                   Quero ser um fornecedor
                 </button>
               </div>
