@@ -90,6 +90,7 @@ export function LoginForm() {
         <Button
           variant="outline"
           className="w-full text-sm font-bold border-white/20 h-12 hover:bg-white/5"
+          onClick={() => (window.location.href = '/onboarding')}
         >
           Quero ser um fornecedor
         </Button>
