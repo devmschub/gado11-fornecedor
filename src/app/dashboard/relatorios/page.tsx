@@ -88,13 +88,21 @@ export default function RelatoriosPage() {
               {[35, 50, 45, 70, 60, 85].map((h, i) => (
                 <div
                   key={i}
-                  className="flex-1 flex flex-col items-center gap-2 group cursor-pointer"
+                  className="flex-1 flex flex-col items-center gap-2 group cursor-pointer h-full justify-end"
                 >
-                  <div className="relative w-full bg-surface-darker rounded-t-xl overflow-hidden h-full flex items-end">
+                  <div
+                    className="relative w-full bg-surface-darker rounded-t-xl overflow-hidden flex items-end w-full"
+                    style={{ height: '100%' }}
+                  >
                     <div
-                      className="w-full bg-primary/20 group-hover:bg-primary transition-all duration-500"
+                      className="w-full bg-primary transition-all duration-500 rounded-t-xl absolute bottom-0 left-0 right-0"
+                      style={{ height: `${h}%`, opacity: 0.3 }}
+                    ></div>
+                    <div
+                      className="w-full bg-primary transition-all duration-500 rounded-t-xl absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100"
                       style={{ height: `${h}%` }}
                     ></div>
+
                     {/* Tooltip value */}
                     <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-background-dark border border-border-dark text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 pointer-events-none">
                       R$ {h * 10}.000
@@ -115,64 +123,38 @@ export default function RelatoriosPage() {
                 Composição de Taxas
               </h3>
               <div className="flex items-center gap-6">
-                <div className="w-32 h-32 rounded-full border-[12px] border-surface-darker relative flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 32 32"
-                    className="w-full h-full transform -rotate-90"
-                  >
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="16"
-                      className="fill-none stroke-blue-500/20"
-                      strokeWidth="32"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="16"
-                      className="fill-none stroke-blue-500"
-                      strokeWidth="32"
-                      strokeDasharray="60 100"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="16"
-                      className="fill-none stroke-primary"
-                      strokeWidth="32"
-                      strokeDasharray="25 100"
-                      strokeDashoffset="-60"
-                    />
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="16"
-                      className="fill-none stroke-yellow-500"
-                      strokeWidth="32"
-                      strokeDasharray="15 100"
-                      strokeDashoffset="-85"
-                    />
-                  </svg>
-                  <div className="absolute inset-0 m-auto w-20 h-20 bg-surface-dark rounded-full"></div>
+                <div className="w-32 h-32 rounded-full relative flex items-center justify-center shrink-0">
+                  <div
+                    className="absolute inset-0 rounded-full"
+                    style={{
+                      background: `conic-gradient(
+                          #3b82f6 0% 60%,
+                          #0df20d 60% 85%,
+                          #eab308 85% 100%
+                        )`,
+                    }}
+                  ></div>
+                  <div className="absolute inset-0 m-auto w-20 h-20 bg-surface-dark rounded-full flex items-center justify-center">
+                    <span className="text-xs font-bold text-white">Total</span>
+                  </div>
                 </div>
                 <div className="space-y-2 flex-1">
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-400 flex items-center gap-1">
+                    <span className="text-gray-400 flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-blue-500"></div>{' '}
                       Deságio (60%)
                     </span>
                     <span className="text-white font-mono">1.8%</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-400 flex items-center gap-1">
+                    <span className="text-gray-400 flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-primary"></div>{' '}
                       IOF (25%)
                     </span>
                     <span className="text-white font-mono">0.38%</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-gray-400 flex items-center gap-1">
+                    <span className="text-gray-400 flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-yellow-500"></div>{' '}
                       TAC (15%)
                     </span>
