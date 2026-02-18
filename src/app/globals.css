@@ -3,11 +3,15 @@
 @theme {
   --font-sans: var(--font-manrope);
 
-  --color-primary: #0df20d;
+  --color-primary: #0df20d; /* Neon Green (unchanged unless explicitly asked) */
+  --color-primary-hover: #0bc40b;
+
+  /* Darker Green Backgrounds */
   --color-background-light: #f5f8f5;
-  --color-background-dark: #102210;
-  --color-surface-dark: #162b16;
-  --color-border-dark: #1e3a1e;
+  --color-background-dark: #051a05; /* Deeper Forest Green */
+  --color-surface-dark: #0d260d; /* Slightly lighter but still very dark green */
+  --color-surface-darker: #020d02; /* Almost black green */
+  --color-border-dark: #1a3d1a; /* Dark green border */
 
   --animate-fade-in: fade-in 0.5s ease-out forwards;
   --animate-slide-up: slide-up 0.5s ease-out forwards;
@@ -15,7 +19,7 @@
 
 @layer utilities {
   .glass-effect {
-    background: rgba(16, 34, 16, 0.8);
+    background: rgba(5, 26, 5, 0.85); /* Adjusted for darker green */
     backdrop-filter: blur(12px);
     border: 1px solid rgba(13, 242, 13, 0.1);
   }
@@ -34,10 +38,10 @@
     height: 8px;
   }
   .custom-scrollbar::-webkit-scrollbar-track {
-    background: #101813;
+    background: #020d02;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #233328;
+    background: #1a3d1a;
     border-radius: 4px;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -51,7 +55,7 @@
     left: calc(50% + 1.5rem);
     right: calc(-50% + 1.5rem);
     height: 2px;
-    background-color: #233328;
+    background-color: #1a3d1a;
     z-index: 0;
     transform: translateY(-50%);
   }
