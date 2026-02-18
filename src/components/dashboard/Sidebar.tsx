@@ -10,6 +10,8 @@ import {
   PieChart,
   LogOut,
   ShieldCheck,
+  Activity,
+  Settings,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -22,6 +24,13 @@ export function Sidebar() {
     { icon: Briefcase, label: 'Backoffice', href: '/dashboard/backoffice' },
     { icon: FileText, label: 'Extratos', href: '/dashboard/extratos' },
     { icon: PieChart, label: 'Relatórios', href: '/dashboard/relatorios' },
+    { icon: ShieldCheck, label: 'Governança', href: '/dashboard/governanca' },
+    { icon: Activity, label: 'Risco & Compliance', href: '/dashboard/risco' },
+    {
+      icon: Settings,
+      label: 'Configurações',
+      href: '/dashboard/configuracoes',
+    },
   ];
 
   return (

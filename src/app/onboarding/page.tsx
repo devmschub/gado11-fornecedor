@@ -113,7 +113,7 @@ export default function Onboarding() {
               </div>
               <div className="text-xs text-yellow-500">Em Homologação</div>
             </div>
-            <div className="h-10 w-10 relative rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border-2 border-gray-600 overflow-hidden shadow-md">
+            <div className="h-10 w-10 relative rounded-full bg-linear-to-br from-gray-700 to-gray-900 border-2 border-gray-600 overflow-hidden shadow-md">
               <Image
                 alt="Foto do perfil do gestor"
                 fill
@@ -414,7 +414,7 @@ export default function Onboarding() {
             </div>
           </div>
 
-          <div className="mt-auto bg-gradient-to-br from-gray-800 to-black p-5 rounded-2xl border border-gray-700 relative overflow-hidden group">
+          <div className="mt-auto bg-linear-to-br from-gray-800 to-black p-5 rounded-2xl border border-gray-700 relative overflow-hidden group">
             <div className="absolute -right-4 -top-4 w-20 h-20 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-all"></div>
             <h4 className="relative z-10 font-bold text-white text-lg mb-2">
               Precisa de ajuda técnica?

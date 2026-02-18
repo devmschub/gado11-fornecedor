@@ -46,7 +46,7 @@ export default function RelatoriosPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 p-6 rounded-2xl relative overflow-hidden">
+          <div className="bg-linear-to-br from-primary/20 to-primary/5 border border-primary/20 p-6 rounded-2xl relative overflow-hidden">
             <div className="relative z-10">
               <h4 className="text-primary font-bold text-lg mb-2">
                 Precisa de algo específico?
@@ -91,7 +91,7 @@ export default function RelatoriosPage() {
                   className="flex-1 flex flex-col items-center gap-2 group cursor-pointer h-full justify-end"
                 >
                   <div
-                    className="relative w-full bg-surface-darker rounded-t-xl overflow-hidden flex items-end w-full"
+                    className="relative w-full bg-surface-darker rounded-t-xl overflow-hidden flex items-end"
                     style={{ height: '100%' }}
                   >
                     <div

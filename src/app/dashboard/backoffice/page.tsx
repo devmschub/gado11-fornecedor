@@ -129,7 +129,7 @@ export default function BackofficePage() {
           </div>
           <h3 className="text-2xl font-bold text-white mb-3">65.4%</h3>
           <div className="h-1.5 w-full bg-surface-darker rounded-full overflow-hidden">
-            <div className="h-full bg-gradient-to-r from-primary to-yellow-500 w-[65.4%] rounded-full"></div>
+            <div className="h-full bg-linear-to-r from-primary to-yellow-500 w-[65.4%] rounded-full"></div>
           </div>
         </div>
 
