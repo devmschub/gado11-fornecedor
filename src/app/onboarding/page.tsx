@@ -6,14 +6,14 @@ import {
   BarChart,
   Headset,
   Info,
-  VerifiedUser,
+  ShieldCheck,
   Check,
   MapPin,
   Leaf,
   CheckCircle,
   ArrowRight,
   Lightbulb,
-  MessageSq,
+  MessageSquare,
 } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -195,7 +195,7 @@ export default function Onboarding() {
           <div className="mt-auto">
             <div className="bg-surface-dark p-4 rounded-xl border border-border-dark">
               <div className="flex items-center gap-2 text-white font-bold text-sm mb-2">
-                <VerifiedUser className="text-primary" size={16} /> Benefícios
+                <ShieldCheck className="text-primary" size={16} /> Benefícios
                 G11
               </div>
               <ul className="text-xs text-gray-400 space-y-2">
@@ -424,7 +424,7 @@ export default function Onboarding() {
               dados.
             </p>
             <button className="relative z-10 w-full py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
-              <MessageSq className="text-sm" size={16} /> Falar no WhatsApp
+              <MessageSquare className="text-sm" size={16} /> Falar no WhatsApp
             </button>
           </div>
         </aside>
